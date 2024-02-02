@@ -376,7 +376,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadManager: {fileID: 0}
-  currentRoad: 2
+  currentRoad: 1
+  moveSpeed: 35
+  useKeyboard: 1
 --- !u!114 &4146249811881647658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14fbc42424bebd47b63b4830c8b8fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipTypes:
+  shipType: {fileID: 11400000, guid: cb56dcf8a40287e4b98f90a9f309e852, type: 2}
+  shipTypesMap:
   - damageType: {fileID: 11400000, guid: cb56dcf8a40287e4b98f90a9f309e852, type: 2}
     projectilePrefab: {fileID: 806602643718551090, guid: 0e7e42a1e2b69934b9ec100fc6510cd8, type: 3}
     sprite: {fileID: 21300000, guid: 46429f14755ff6042bceac31e16abb4b, type: 3}

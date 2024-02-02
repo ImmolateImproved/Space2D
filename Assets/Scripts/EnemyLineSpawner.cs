@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemyLineSpawner : MonoBehaviour
 {
     [SerializeField] private RoadManager roadManager;
     [SerializeField] private Enemy[] enemyPrefabs;
@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float randomPositionOffset;
     [SerializeField] private float spawnInterval;
     [SerializeField] private float enemyStartYPos;
-    [SerializeField] private float projectileStartYPos;
+    [SerializeField] private float typeChangerStartYPos;
     [SerializeField] private float enemyMoveSpeed;
 
     private Enemy[] currentEnemyLine;
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
                 SpawnEnemy(i);
             }
 
-            SpawnDamageTypeChanger();
+            //SpawnDamageTypeChanger();
 
             yield return wfs;
         }
@@ -71,31 +71,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnDamageTypeChanger()
     {
-        var enemyType = currentEnemyLine[0].ShipType;
-        var typeChanger = GetTypeChangerByDamageType(enemyType);
-        var damageTypeChanger = Instantiate(typeChanger);
-
-        var randomRoad = Random.Range(0, roadManager.roadCount);
+        var randIndex = Random.Range(0, damageTypeChangers.Length);
+        var damageTypeChanger = Instantiate(damageTypeChangers[randIndex]);
 
         var position = new Vector2
         {
-            x = (-roadManager.offset * 2) + (roadManager.offset * (randomRoad + 1)),
-            y = projectileStartYPos
+            x = 0,
+            y = enemyStartYPos
         };
 
         damageTypeChanger.Init(position, Vector2.down * enemyMoveSpeed);
-    }
-
-    private DamageTypeChanger GetTypeChangerByDamageType(DamageType damageType)
-    {
-        foreach (var item in damageTypeChangers)
-        {
-            if (item.DamageType == damageType)
-            {
-                return item;
-            }
-        }
-
-        return null;
     }
 }
