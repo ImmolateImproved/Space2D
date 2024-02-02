@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3731751923032815832}
   - component: {fileID: 7826996454425546281}
   - component: {fileID: 2429340376704871013}
-  - component: {fileID: 294030063467838437}
+  - component: {fileID: 1833418062502555523}
   - component: {fileID: 8784773856656377565}
   m_Layer: 0
   m_Name: PortalRed
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &294030063467838437
-BoxCollider2D:
+--- !u!58 &1833418062502555523
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,18 +147,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.44, y: 1.37}
-    newSize: {x: 0.93, y: 0.84}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.93, y: 0.84}
-  m_EdgeRadius: 0
+  m_Radius: 0.72
 --- !u!114 &8784773856656377565
 MonoBehaviour:
   m_ObjectHideFlags: 0
